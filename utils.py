@@ -8,10 +8,11 @@ from google.oauth2.service_account import Credentials
 def authenticate():
     return "DLAI_CREDENTIALS", "DLAI_PROJECT_ID"
     #Load .env
-    load_dotenv()
+    # load_dotenv()
     
     #Decode key and store in .JSON
-    SERVICE_ACCOUNT_KEY_STRING_B64 = os.getenv('SERVICE_ACCOUNT_KEY')
+    SERVICE_ACCOUNT_KEY_STRING_B64=""
+    # SERVICE_ACCOUNT_KEY_STRING_B64 = os.getenv('SERVICE_ACCOUNT_KEY')
     SERVICE_ACCOUNT_KEY_BYTES_B64 = SERVICE_ACCOUNT_KEY_STRING_B64.encode("ascii")
     SERVICE_ACCOUNT_KEY_STRING_BYTES = base64.b64decode(SERVICE_ACCOUNT_KEY_BYTES_B64)
     SERVICE_ACCOUNT_KEY_STRING = SERVICE_ACCOUNT_KEY_STRING_BYTES.decode("ascii")
